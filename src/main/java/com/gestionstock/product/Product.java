@@ -1,61 +1,63 @@
 package com.gestionstock.product;
 
-public class Product {
-	
-	private String  ref;
-	private  int prixunitaire;
-	private int qte;
-	public Product() {
-		super();
-	}
-	public Product(String ref, int prixunitaire, int qte) {
-		super();
-		this.ref = ref;
-		this.prixunitaire = prixunitaire;
-		this.qte = qte;
-	}
-	public String getRef() {
-		return ref;
-	}
-	public void setRef(String ref) {
-		this.ref = ref;
-	}
-	public int getPrixunitaire() {
-		return prixunitaire;
-	}
-	public void setPrixunitaire(int prixunitaire) {
-		this.prixunitaire = prixunitaire;
-	}
-	public int getQte() {
-		return qte;
-	}
-	public void setQte(int qte) {
-		this.qte = qte;
-	}
-	@Override
-	public int hashCode() {
-		final int prime = 31;
-		int result = 1;
-		result = prime * result + ((ref == null) ? 0 : ref.hashCode());
-		return result;
-	}
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		Product other = (Product) obj;
-		if (ref == null) {
-			if (other.ref != null)
-				return false;
-		} else if (!ref.equals(other.ref))
-			return false;
-		return true;
-	}
-	
-	
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 
+@Entity
+public class Product {
+	@Id
+	@GeneratedValue
+    private int id;
+    private String nom;
+    private int prix;
+    private int prixAchat;
+    
+    
+    public Product() {
+		// TODO Auto-generated constructor stub
+	}
+
+	public Product(int id, String nom, int prix, int prixAchat) {
+		super();
+		this.id = id;
+		this.nom = nom;
+		this.prix = prix;
+		this.prixAchat = prixAchat;
+	}
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public String getNom() {
+		return nom;
+	}
+
+	public void setNom(String nom) {
+		this.nom = nom;
+	}
+
+	public int getPrix() {
+		return prix;
+	}
+
+	public void setPrix(int prix) {
+		this.prix = prix;
+	}
+
+	public int getPrixAchat() {
+		return prixAchat;
+	}
+
+	public void setPrixAchat(int prixAchat) {
+		this.prixAchat = prixAchat;
+	}
+    
+    
 }
+
