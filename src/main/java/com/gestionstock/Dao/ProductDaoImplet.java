@@ -1,5 +1,6 @@
 package com.gestionstock.Dao;
 
+import java.util.Iterator;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -38,6 +39,14 @@ public class ProductDaoImplet implements ProductDao {
 	Product product = new Product();
 	product.setId(id);
 	productrepository.delete(product);
+		
+	}
+
+	@Override
+	public void findById(int id) {
+	Product product = new Product();
+	product.getId();
+	productrepository.findById(id);
 		
 	}
 
